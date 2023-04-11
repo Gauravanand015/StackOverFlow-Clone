@@ -50,7 +50,7 @@ function showAllQuestion(array){
         cardDiv.setAttribute("id", item._id)
         cardDiv.addEventListener("click",()=>{
             localStorage.setItem("particularQuestion",JSON.stringify(item))
-            window.location.href = "../html/questions.html"
+            window.location.href = "../frontend/questions.html"
         })
 
         detailsDiv.append(votesDiv,answerDiv)

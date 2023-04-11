@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
-    <link rel="stylesheet" href="../style/signup.css">
+    <link rel="stylesheet" href="../frontend/style/signup.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
@@ -50,7 +50,7 @@
         let res = await data.json()
         if (res == "the user is already registered") {
             swal({
-                title: "This Email is Already Exist Try Using Different Email!!",
+                title: "This Email is Already Exists Try Using Different Email!!",
                 icon: "warning",
             });
         }else{

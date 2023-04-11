@@ -13,9 +13,9 @@
     <!----------------------------- navbar css --------------------------------->
     <!-- <link rel="stylesheet" href="../style/nav.css" /> -->
     <!----------------------------- navbar css --------------------------------->
- <link rel="stylesheet" href="../style/user.css" />
-    <link rel="stylesheet" href="../style/navBar.css" />
-    <link rel="stylesheet" href="../style/index.css" />
+ <link rel="stylesheet" href="../frontend/style/user.css" />
+    <link rel="stylesheet" href="../frontend/style/navBar.css" />
+    <link rel="stylesheet" href="../frontend/style/index.css" />
  
 </head>
 
@@ -26,7 +26,7 @@
     </div>
     <div id="navbar">
         <div id="hb">
-          <img src="../image/hamburger.png" alt="">
+          <img src="../frontend/image/hamburger.png" alt="">
           <div id="contents">
             <a href="./topQuestions.html"> <button>Top Question</button></a>
             <a href="./query.html"> <button>Query</button></a>
@@ -37,7 +37,7 @@
         <div id="lh">
           <!-- <img src="../image/hamburger.png" id="hanb" alt=""> -->
          
-          <a href="./index.html"><img style="width: 130px;" src="../image/orangelogo.png" alt="logo"></a>
+          <a href="./index.html"><img style="width: 130px;" src="../frontend/image/orangelogo.png" alt="logo"></a>
         </div>
         <div id="sec">
             <div id="navbtn">
@@ -65,7 +65,7 @@
             <h1>Users</h1>
             <div class="row first">
                 <div class="user-body-filter row">
-                    <img src="../image/magniflyingglass.png" alt="search" />
+                    <img src="../frontend/image/magniflyingglass.png" alt="search" />
                     <input type="text" class="user-body-filter-searchbox" placeholder="Filter by user"
                         oninput="search()" />
                 </div>
@@ -79,32 +79,7 @@
             </div>
             <div  class="user-box"></div>
         </section>
-
-        <!-- ---------------------
-        left div added from Homepage -->
-
-        <!-- <div id="leftdiv">
-            <a href="#home">Home</a>
-            <div>
-                <p>PUBLIC</p>
-                <ul style="list-style-type: none">
-                    <li><a href="home.html">Questions</a></li>
-                    <li><a href="">Tags</a></li>
-                    <li><a href="../html/users.html">Users</a></li>
-                    <li><a href="">Companies</a></li>
-                </ul>
-            </div>
-            <div class="other-list">
-                <p>COLLECTIVES</p>
-                <a href="" class="Collectives">Explore Collectives</a>
-            </div>
-            <div>
-                <p>TEAMS</p>
-                <a href="" class="Collectives">Create free team</a>
-            </div>
-        </div> -->
-
-        <!-- ---------------------- -->
+        <!-------------------------->
     </div>
     <div id="FOOTER">
         <!-- footer here copy this div -->
@@ -165,16 +140,16 @@
   
         <!-- ICONS -->
   
-        <div id="icons"><img src="../image/facebook.png" alt=".\facebook.png">
+        <div id="icons"><img src="../frontend/image/facebook.png" alt=".\facebook.png">
           <!-- twitter  -->
-              <img src="../image/twitter.png" alt="">
+              <img src="../frontend/image/twitter.png" alt="">
               <!-- instagram -->
-              <img src="../image/instagram.png" alt="">
+              <img src="../frontend/image/instagram.png" alt="">
   
               <!-- pinterest -->
-              <img src="../image/pinterest (1).png" alt="">
+              <img src="../frontend/image/pinterest (1).png" alt="">
               <!-- youtube -->
-              <img src="../image/youtube.png" alt="">
+              <img src="../frontend/image/youtube.png" alt="">
         </div>
      </div>
 
@@ -221,7 +196,7 @@
             let div2 = document.createElement("div");
 
             let img = document.createElement("img");
-            img.src = "../image/profile.png";
+            img.src = "../frontend/image/profile.png";
 
             let name = document.createElement("h3");
             name.innerText = user.name;
