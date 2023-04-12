@@ -17,11 +17,11 @@
             <h1>sign up</h1>
             <!-- <form action=""> -->
             <label for="name">Name</label><br>
-            <input type="text" id="name" placeholder="enter your name"><br><br>
+            <input type="text" id="name" placeholder="enter your name" required><br><br>
             <label for="email">Email</label><br>
-            <input type="email" id="email" placeholder="enter your email"><br><br>
+            <input type="email" id="email" placeholder="enter your email" required><br><br>
             <label for="password">Password</label><br>
-            <input type="password" id="password" placeholder="enter the password"><br><br>
+            <input type="password" id="password" placeholder="enter the password" required><br><br>
             <button onclick="register()">Sign Up</button>
             <!-- </form> -->
 
@@ -60,7 +60,7 @@
                 icon: "success",
             });
             setTimeout(()=>{
-                window.location.href = "./topQuestions.html"
+                window.location.href = "./login.html"
             },2000)
         }
     }

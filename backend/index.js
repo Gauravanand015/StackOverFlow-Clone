@@ -43,7 +43,7 @@ app.get('/auth/google',
 
 app.get('/auth/google/callback', 
   passport.authenticate('google', {
-     successRedirect:"https://www.facebook.com",
+     successRedirect:"https://illustrious-zuccutto-eff109.netlify.app/",
      failureRedirect: '/login',
      session:false
      }),
