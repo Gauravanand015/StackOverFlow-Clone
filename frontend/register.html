@@ -15,7 +15,7 @@
     <div id="container">
         <div id="left">
             <h1>sign up</h1>
-            <!-- <form action=""> -->
+            <!-- <form action="#"> -->
             <label for="name">Name</label><br>
             <input type="text" id="name" placeholder="enter your name" required><br><br>
             <label for="email">Email</label><br>
@@ -41,7 +41,14 @@
             email: document.getElementById("email").value,
             password: document.getElementById("password").value
         }
-        let data = await fetch("http://localhost:2000/user/register", {
+        if(payload.name == "" || payload.email == "" || payload.password == ""){
+            swal({
+                title: "Fill all the details!!",
+                icon: "warning",
+            });
+        }
+        else{
+            let data = await fetch("http://localhost:2000/user/register", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
@@ -62,6 +69,7 @@
             setTimeout(()=>{
                 window.location.href = "./login.html"
             },2000)
+        }
         }
     }
 

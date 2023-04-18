@@ -64,7 +64,14 @@
             email,
             password
         }
-        lgn(obj)
+        if(obj.email == "" || obj.password == ""){
+            swal({
+                        title: "Fill All the Details",
+                        icon: "warning",
+                    });
+        }else{
+            lgn(obj)
+        }
     })
 
     async function lgn(data) {

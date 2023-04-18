@@ -2,44 +2,48 @@ const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-const swal = require("sweetalert")
 const { redisclient } = require("../configs/redis");
 const { UserModel } = require("../models/user.model");
 const UserRouter = express.Router();
-
 const { authentication } = require("../middlewares/authentication");
 
-// UserRouter.get("/",(req,res)=>{
-//     res.jsonFile(__dirname+"/index.html");
-// })
+// Render All Users
+UserRouter.get("/getall", async (req, res) => {
+  const all = await UserModel.find();
+  res.json(all);
+});
 
+//To register User
 UserRouter.post("/register", async (req, res) => {
-  let user = req.body;
-  console.log(req.body)
+  const { email, name, password } = req.body;
+  console.log(req.body);
   try {
-    let findUser = await UserModel.findOne({ email: user.email });
-    console.log(findUser)
-    if (findUser.email == user.email) {
-      console.log(true)
+    let findUser = await UserModel.find({ email: email });
+    console.log(findUser);
+    if (findUser.length>0) {
+      console.log(true);
       return res.json("the user is already registered");
+    } else {
+      bcrypt.hash(password, 6, async (err, hash) => {
+        if (err) return res.json("something went wrong");
+        else {
+          let userData = new UserModel({
+            name,
+            email,
+            password:hash
+          })
+          await userData.save();
+          res.json("User Has Been Registered!!!")
+        }
+      });
     }
-    bcrypt.hash(user.password, 6, async (err, hash) => {
-      if (err) return res.json("something went wrong");
-      else {
-        user.password = hash;
-
-        user = new UserModel(user);
-        await user.save();
-        res.json("The user user has now been registered");
-      }
-    });
   } catch (err) {
     console.log(err);
     res.json("something went wrong while registering!!!");
   }
 });
 
-//login router
+//to login user
 UserRouter.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -65,14 +69,6 @@ UserRouter.post("/login", async (req, res) => {
     res.send("something went wrong in login route");
   }
 });
-
-
-// Render All Users
-UserRouter.get("/getall",async(req,res)=>{
-  const all = await UserModel.find()
-  res.json(all)
-})
-
 
 module.exports = {
   UserRouter,
