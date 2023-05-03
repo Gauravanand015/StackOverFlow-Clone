@@ -2,6 +2,15 @@ document.querySelector(".AskButton").addEventListener("click", () => {
     window.location.href = "query.html"
 })
 
+let token = sessionStorage.getItem("token")
+
+if(token){
+    document.getElementById("ls").style.display = "none"
+    document.querySelector(".user").innerText = "Hi!!"+" "+sessionStorage.getItem("Name");
+}else{
+    document.querySelector("#Name").style.display = "none"
+}
+
 async function getData() {
     let data = await fetch("http://localhost:2000/question/getAllQuestions");
     let res = await data.json();

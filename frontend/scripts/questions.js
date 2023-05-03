@@ -91,7 +91,7 @@ function answers(data) {
   });
 }
 
-let token = localStorage.getItem("token");
+let token = sessionStorage.getItem("token");
 let particularQuestion = JSON.parse(localStorage.getItem("particularQuestion"));
 let _id = particularQuestion._id;
 document.getElementById("submit").addEventListener("click", async () => {
@@ -121,6 +121,7 @@ document.getElementById("submit").addEventListener("click", async () => {
           }
         );
         const res = await post_question.json();
+        window.location.reload()
       } else {
         return alert("You Cannot answer your own question");
       }
@@ -128,7 +129,8 @@ document.getElementById("submit").addEventListener("click", async () => {
       console.log(error);
     }
   } else {
-    location.assign("../html/login.html");
+    alert("You Have to Login First")
+    window.location.href = "login.html"
   }
 });
 

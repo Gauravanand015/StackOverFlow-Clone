@@ -62,7 +62,7 @@ UserRouter.post("/login", async (req, res) => {
         process.env.token
       );
       console.log(token);
-      res.json({ msg: "login successful", token });
+      res.json({ msg: "login successful", token, user:user.name });
     }
   } catch (err) {
     console.log(err);

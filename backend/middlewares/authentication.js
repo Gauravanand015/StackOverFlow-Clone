@@ -13,7 +13,7 @@ const validateUser = (req,res,next)=>{
                 console.log(err)
                 res.send({"Message":"Please Login First!!" ,"error":err.message})
             }else{
-                    console.log(decoded)
+                    // console.log(decoded)
                     req.body.userid=decoded.userid;
                     req.body.email=decoded.email;
                     req.body.name=decoded.name;

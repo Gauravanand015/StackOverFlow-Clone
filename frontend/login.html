@@ -84,15 +84,16 @@
             })
             if (res.ok) {
                 let X = await res.json()
-                // console.log("XXXXX",X);
+                console.log("XXXXX",X);
                 if (X.msg == "login successful") {
                     swal({
                         title: "Login Successful",
                         icon: "success",
                     });
                     setTimeout(() => {
-                        localStorage.setItem("loggedInUser", JSON.stringify(data.email))
-                        localStorage.setItem("token", X.token);
+                        sessionStorage.setItem("loggedInUser", JSON.stringify(data.email))
+                        sessionStorage.setItem("token", X.token);
+                        sessionStorage.setItem("Name", X.user);
                         window.location.href = "./topQuestions.html";
                     }, 3000)
                 }

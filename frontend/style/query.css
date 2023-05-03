@@ -155,3 +155,21 @@
   .Good-Question > h2{
     font-weight: 200;
   }
+
+  #ls{
+    /* border: 2px solid red; */
+    display: flex;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
+    width:10% ;
+    display: none;
+  }
+  #ls button{
+    margin-right: 7px;
+    padding:10px;
+    color:white;
+    border-radius: 5px;
+    background-color:#f48024 ;
+    border:none;
+  }
