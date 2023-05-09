@@ -12,7 +12,7 @@ if(token){
 }
 
 async function getData() {
-    let data = await fetch("http://localhost:2000/question/getAllQuestions");
+    let data = await fetch("https://poised-shorts-toad.cyclic.app/question/getAllQuestions");
     let res = await data.json();
     showAllQuestion(res)
 }
