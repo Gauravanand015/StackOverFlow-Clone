@@ -22,7 +22,7 @@ let thirdSection = document.querySelector(".third-section")
 
 function showAllQuestion(array){
     array.forEach((item) => {
-        console.log(item)
+        // console.log(item)
         let detailsDiv = document.createElement("div");
         detailsDiv.setAttribute("class","details")
 
